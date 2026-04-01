@@ -62,24 +62,12 @@ def logistics_chain_validator(nodes: list, cargo_weight: int) -> bool:
     else:
         return True
 
-print(logistics_chain_validator([100, 80, 150], 90))
-
+# print(logistics_chain_validator([100, 80, 150], 90))
+from collections import Counter
 # Question 6: deep_merge_inventories
 def deep_merge_inventories(store_a: dict, store_b: dict) -> dict:
     
-    new = {}
-    ok = sum()
-    for key, value in store_b.items():
-        for well, va in store_a.items():
-            pass
-        if well in store_a:
-            new[well] = value + va
-        else:
-            new[key] = value
-      
-    # for key, value in store_b.items():
-    #     store_a.setdefault()
-            
-        return new
+   well = Counter(store_a) + Counter(store_b)
+   return well
 
 print(deep_merge_inventories( {"Milk": 2}, {"Milk": 3, "Bread": 1}))
